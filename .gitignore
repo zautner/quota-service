@@ -1,0 +1,13 @@
+*~
+.DS_Store
+.idea
+*.env
+node_modules
+*.iml
+npm-debug.log
+test/junit/
+.vscode
+/.python-version
+/aws_keys.patch
+newrelic_agent.log
+package-lock.json

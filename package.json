@@ -1,0 +1,50 @@
+{
+  "name": "quota-service",
+  "version": "1.0.25",
+  "main": "index.js",
+  "repository": "git@github.com:RapidAPI/quota-service.git",
+  "license": "MIT",
+  "author": "Shlomi Ozon <shlomi@rapidapi.com>",
+  "scripts": {
+    "start": "node .",
+    "staging": "node -r dotenv/config . dotenv_config_path=./config/.stage.env",
+    "test": "jest --runInBand",
+    "test-coverage": "jest ./test/quotas/clickhouseQuotas.test.js --coverage",
+    "prod": "node -r dotenv/config . dotenv_config_path=./config/.prod.env",
+    "rebind": "echo 'rebind'",
+    "pre-prod": "node -r dotenv/config . dotenv_config_path=./config/.preprod.env",
+    "jest-debug-script": "node ./node_modules/jest/bin/jest --runInBand --setupTestFrameworkScriptFile=‘./test/test-debug-setup.js’ ./test/quotas/clickhouseQuotas.test.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "globalSetup": "./config/dotenv-test-setup.js"
+  },
+  "dependencies": {
+    "@rapidapi/rapid-logger": "^1.0.16",
+    "@rapidapi/rapid-metrics": "^2.0.20",
+    "aws-sdk": "^2.793.0",
+    "body-parser": "^1.19.0",
+    "clickhouse": "^2.2.1",
+    "cluster": "^0.7.7",
+    "compression": "^1.7.4",
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "fast-safe-stringify": "^2.0.7",
+    "glob": "^7.1.6",
+    "jest": "^26.6.3",
+    "joi": "^17.3.0",
+    "moment": "^2.29.1",
+    "npdynamodb": "^0.2.15",
+    "os": "^0.1.1",
+    "prom-client": "^13.0.0",
+    "sqlstring": "^2.3.2",
+    "supertest": "^6.0.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

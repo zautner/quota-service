@@ -1,0 +1,29 @@
+name: Create New Release
+
+on: 
+  pull_request:
+    types: [closed]
+jobs:
+  createRelease:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with: 
+        token: ${{ secrets.ACTIONS_ACCESS_KEY }}
+
+    - name: Bump version and Push tag 
+      id: changelog
+      uses: TriPSs/conventional-changelog-action@v3
+      with:
+        github-token: ${{ secrets.ACTIONS_ACCESS_KEY }}
+        skip-on-empty: 'false'
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACTIONS_ACCESS_KEY }}
+      with:
+        tag_name: ${{ steps.changelog.outputs.version }}
+        release_name: ${{ (github.head_ref) }}
+        body: ${{ steps.changelog.outputs.clean_changelog }}

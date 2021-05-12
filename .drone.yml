@@ -80,7 +80,7 @@ steps:
       - echo 'CLICKHOUSE_FORMAT = "tsv"' >> ./config/.test.env
       - echo 'AWS_REGION = us-east-1' >> ./config/.test.env
       - echo 'LOG_LEVEL = debug' >> ./config/.test.env
-      - echo 'RUN_LOCAL=true' ' >> ./config/.test.env
+      - echo 'RUN_LOCAL=true' >> ./config/.test.env
   - name: test
     image: node:16  
     commands:

@@ -25,9 +25,9 @@ steps:
     commands:
       - pwd -P
       - echo  '@rapidapi:registry=https://npm.pkg.github.com' >>.npmrc
-      - echo '//npm.pkg.github.com/:_authToken=1ad1138493942b469069092b2cb72975047c259c' >> .npmrc
+      - echo '//npm.pkg.github.com/:_authToken=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' >> .npmrc
       - cat .npmrc
-      - npm install
+      - npm install --legacy-peer-deps
       - echo 'PORT = 8080' >> ./config/.test.env
       - echo 'BUILD_VERSION = 1.0.1' >> ./config/.test.env
       - echo 'NODE_ENV = test' >> ./config/.test.env

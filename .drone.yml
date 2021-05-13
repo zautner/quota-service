@@ -23,7 +23,8 @@ steps:
       LOG_LEVEL: "debug"
       RUN_LOCAL: "true"
     commands:
-      - pwd -P
+      - pwd -P; ls -1 -A
+      - cd quota-service
       - echo  '@rapidapi:registry=https://npm.pkg.github.com' >>.npmrc
       - echo '//npm.pkg.github.com/:_authToken=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' >> .npmrc
       - cat .npmrc

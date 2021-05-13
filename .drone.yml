@@ -27,9 +27,10 @@ steps:
       - npm i -g npm
       - echo  '@rapidapi:registry=https://npm.pkg.github.com' >>.npmrc
       - echo '//npm.pkg.github.com/:_authToken=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' >> .npmrc
-      - cat .npmrc
-      - cp -fb .npmrc ~/.npmrc
-      - npm install --legacy-peer-deps
+      - cat .npmrc > ~/.npmrc
+      - npm install @rapidapi/rapid-logger
+      - npm install @rapidapi/rapid-metrics
+      - npm install 
       - echo 'PORT = 8080' >> ./config/.test.env
       - echo 'BUILD_VERSION = 1.0.1' >> ./config/.test.env
       - echo 'NODE_ENV = test' >> ./config/.test.env

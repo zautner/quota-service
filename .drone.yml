@@ -9,7 +9,7 @@ services:
     image: yandex/clickhouse-server:20.3
 steps:
   - name: install
-    image: node:16
+    image: node:latest
     environment:
       PORT: "8080"
       BUILD_VERSION: "1.0.1"
@@ -24,12 +24,12 @@ steps:
       RUN_LOCAL: "true"
     commands:
       - pwd -P; ls -1 -A
-      - cd quota-service
+      - npm i -g npm
       - echo  '@rapidapi:registry=https://npm.pkg.github.com' >>.npmrc
       - echo '//npm.pkg.github.com/:_authToken=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' >> .npmrc
       - cat .npmrc
       - cp -fb .npmrc ~/.npmrc
-      - npm install --legacy-peer-deps --verbose
+      - npm install --legacy-peer-deps
       - echo 'PORT = 8080' >> ./config/.test.env
       - echo 'BUILD_VERSION = 1.0.1' >> ./config/.test.env
       - echo 'NODE_ENV = test' >> ./config/.test.env

@@ -34,7 +34,7 @@
     "express": "^4.17.1",
     "fast-safe-stringify": "^2.0.7",
     "glob": "^7.1.6",
-    "jest": "^26.6.3",
+    "jest": "^27.0.0",
     "joi": "^17.3.0",
     "moment": "^2.29.1",
     "npdynamodb": "^0.2.15",

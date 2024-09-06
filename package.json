@@ -30,19 +30,19 @@
     "clickhouse": "^2.2.1",
     "cluster": "^0.7.7",
     "compression": "^1.7.4",
-    "config": "^3.3.2",
+    "config": "^3.3.9",
     "express": "^4.17.1",
     "fast-safe-stringify": "^2.0.7",
     "glob": "^7.1.6",
-    "jest": "^26.6.3",
-    "joi": "^17.3.0",
+    "jest": "^29.7.0",
+    "joi": "^17.7.1",
     "moment": "^2.29.1",
     "npdynamodb": "^0.2.15",
     "os": "^0.1.1",
     "prom-client": "^13.0.0",
     "sqlstring": "^2.3.2",
     "supertest": "^6.0.1",
-    "winston": "^3.3.3"
+    "winston": "^3.3.4"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
